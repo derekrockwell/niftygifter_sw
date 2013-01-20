@@ -1,0 +1,12 @@
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "well well-raised" }) do |f| %>
+<legend>Password Reset</legend>
+<small class="help-block">Enter your email and a password reset link will be e-mailed to you</small>
+<div data-role="fieldcontain">
+	<%= f.label :email%>
+	<%= f.email_field :email %>
+</div>
+
+	<%= f.submit " Send Password Reset Email " %>
+
+<% end %>

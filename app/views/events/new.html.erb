@@ -1,0 +1,33 @@
+
+<div class="pagination-centered">
+	<h3>Create an Event</h3>
+</div>
+<%= form_for @event do |f| %>
+
+<div data-role="fieldcontain">
+	<%= f.label :recipient, "Whos event?" %>
+	<%= f.collection_select(:recipient_id, current_user.recipients, :id, :alias_for_collection, 
+		{:selected => @selected_recipient_id}) %>
+</div>
+
+<div data-role="fieldcontain">
+	<%= f.label :name, "What event?" %>
+	<%= f.text_field :name %>
+</div>
+
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup" data-type="horizontal">
+		<legend>Event Date</legend>
+		<%= select_month(1, :prefix => "event")%>
+		<%= select_day(1, :prefix => "event")%>
+	</fieldset>
+</div>
+
+<div data-role="fieldcontain">
+	<%= f.label :reminder, "Remind me in (days)" %>
+	<%= f.select(:reminder, options_for_select([1,2,3,5,10,15,30])) %>
+</div>
+
+<%= f.submit('Create Event') %>
+<%end%>
+

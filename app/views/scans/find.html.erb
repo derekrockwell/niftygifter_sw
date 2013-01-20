@@ -1,0 +1,22 @@
+<% if @res.has_error? %>
+	<strong><%=@res.error%></strong>
+<% else %>
+
+<div class=" pagination-centered">
+	<img class="img-polaroid large-image" src=<%= @res.items.first.get('LargeImage/URL')%>>
+</div>
+<hr/>
+<div class="spacer-10"></div>
+<div class="add-image-wrap">
+	<div class=" pagination-right pull-right">
+		<a id="add" href=<%= new_scan_recipient_path(@scan.upc)  %>>
+			<img  class="plus-images" src=<%=image_path("plus.png")%>>
+		</a>
+	</div>
+	<div class="pagination-left">
+		<a class="muted lead" href=<%=@res.items.first.get('DetailPageURL')%>/><%= @res.items.first.get('ItemAttributes/Title').truncate(40)%></a> <br/>
+		<h3><%= @res.items.first.get('OfferSummary/LowestNewPrice/FormattedPrice')%></h3>
+	</div>
+</div>
+
+<% end %>

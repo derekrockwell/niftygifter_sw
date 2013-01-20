@@ -1,0 +1,13 @@
+
+<div class="width-100 pagination-centered">
+  <h3>Saved Items</h3>
+</div>
+
+<% current_user.scans.limit(10).order("created_at DESC").each do |scan| %>
+<% @scan = scan %>
+<%= render 'layouts/scan-list' %>
+<%end%>
+
+<%= render 'layouts/scan-links' %>
+
+

@@ -1,0 +1,26 @@
+
+<%= form_for("user", :url => user_session_path ) do |f| %>
+
+<h3>Log in with your account</h3>
+<small>Need an account? 
+	<%= link_to('Create an account', new_user_registration_path)  %>
+</small>
+
+<div data-role="fieldcontain">
+	<%= f.label :email %>
+	<%= f.email_field :email %>
+</div>
+
+<div data-role="fieldcontain">
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+</div>
+
+<%= f.submit('Sign In', :rel => "external", "data-ajax" => "false") %> 
+<div><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), "data-ajax" => "false", :rel => "external" %></div>
+
+<% end %>
+
+<div >
+	Forgot your password? <%= link_to "Click Here", new_user_password_path %> 
+</div>

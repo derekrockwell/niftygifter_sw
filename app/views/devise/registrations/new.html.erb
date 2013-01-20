@@ -1,0 +1,28 @@
+
+<%= form_for(resource, :as => resource_name, :url => user_registration_path(resource)) do |f| %>
+
+<h3>Sign Up for an Account</h3>
+<div data-role="fieldcontain">
+	<%= f.label :email%>
+	<%= f.email_field :email %>
+</div>
+<div data-role="fieldcontain">
+	<%= f.label :phone%>
+	<%= f.telephone_field :phone %>
+</div>
+<div data-role="fieldcontain">
+	<%= f.label :password%>
+	<%= f.password_field :password %>
+</div>
+<div data-role="fieldcontain">
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %>
+</div>
+
+<div class="form-actions align-center">
+	<%= f.submit "Register Your Account Now", :class => "btn btn-danger btn-large btn-block" %>
+	<div><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), "data-ajax" => "false", :rel => "external" %></div>
+</div>
+</fieldset>
+<% end %>
+

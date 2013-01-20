@@ -1,0 +1,22 @@
+
+
+<div class="pagination-centered">
+	<% unless browser.mac? %>
+	<a href="http://zxing.appspot.com/scan?ret=<%= URI.encode('' << root_url << 'scans/find/{CODE}')%>">
+		<img class="add-image" src=<%=image_path("scan_button.png")%>>
+	</a>
+	<%else%>
+	<a href="pic2shop://scan?callback=<%= URI.encode('' << root_url << 'scans/find/EAN')%>">
+		<img class="add-image" src=<%=image_path("scan_button.png")%>>
+	</a>	
+	<%end%>
+</div>
+
+<h3 class="pagination-centered"> Scan UPC </h3>
+<hr></hr>
+<div class="pagination-centered">
+	<%= button_to "Events", events_path, :method => "get"%>
+</div>
+<div class="pagination-centered">
+	<%= button_to "Gift Lists", recipients_path, :method => "get"%>
+</div>

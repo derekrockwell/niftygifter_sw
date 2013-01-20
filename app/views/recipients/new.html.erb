@@ -1,0 +1,16 @@
+<%= form_for @recipient, :url => scan_recipients_path do |f| %>
+<div data-role="fieldcontain">
+	<%= f.text_field :alias %>
+</div>
+<%= f.submit('Add Someone New') %>
+<%end%>
+
+<hr></hr>
+<h3 class="pagination-centered">Existing Gift Lists </h3>
+<div class="pagination-centered">
+	<% @recipients.each do |recipient| %>
+	<% unless recipient.id.nil? %>
+	<%= link_to recipient.alias,scan_recipient_path(@scan.upc, recipient.id), :method => :put, "data-role" => "button" %>	
+	<%end%>
+	<%end%>
+</div>

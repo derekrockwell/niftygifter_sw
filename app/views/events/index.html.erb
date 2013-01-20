@@ -1,0 +1,14 @@
+
+<h3 class="pagination-centered">Upcoming Events</h3>
+<%= link_to "Create New Event", new_event_path, "data-role" => "button" %>
+<hr></hr>
+<div class="pagination-centered">
+	<% @events.each do |event| %>
+	<%= link_to event.recipient.alias + " - " + event.name + " - " + event.event_time.strftime("%B %d, %Y"), 
+	event_path(event), 
+	"data-role" => "button"
+	%> 
+	<%end%>
+</div>
+
+

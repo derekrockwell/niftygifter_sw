@@ -1,0 +1,23 @@
+	<% response = @scan.get_response %>
+	<div class="well" style="height:80px;">
+		<div class="width-70 pull-right pagination-left">
+			<a href=<%=response.items.first.get('DetailPageURL')%>/><%= response.items.first.get('ItemAttributes/Title').truncate(40)%></a> <br/>
+			<strong><%= response.items.first.get('OfferSummary/LowestNewPrice/FormattedPrice')%></strong>
+
+			<div class="pull-right">
+				<%= link_to raw('<i class="icon-remove"></i>'),scan_path(@scan), 
+				:confirm => "Are you sure you wish to delete this gift?",
+				:method => "delete", 
+				:remote => true, 
+				:class=>'delete_scan' %>
+			</div>
+		</div>
+		<div class="width-20">
+			<img src=<%= response.items.first.get('SmallImage/URL')%>>	
+		</div>
+	</div>
+	<script>
+	    $('.delete_scan').bind('ajax:success', function() {  
+        $(this).closest('.well').fadeOut();  
+    });  
+	</script>

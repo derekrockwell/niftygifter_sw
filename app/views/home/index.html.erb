@@ -1,0 +1,46 @@
+<div class="container">
+
+  <style type="text/css">
+  body {
+    margin-top:100px;    
+  }
+  </style>
+
+  <div class="hero-unit">
+    <div class="row">
+      <div class="span5">
+        <%= image_tag "gifter_logo.png", {:size => "350x350"}%>
+      </div>
+      <div class="span6 pagination-right">
+        <div class="spacer-20"></div>
+        <a href="https://twitter.com/niftygifter1" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @niftygifter1</a>
+        <div class="well" id="wufoo-z7x3p9">
+          <a href="http://myniftygifter.wufoo.com/forms/z7x3p9"></a>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">var z7x3p9;(function(d, t) {
+    var s = d.createElement(t), options = {
+      'userName':'myniftygifter', 
+      'formHash':'z7x3p9', 
+      'autoResize':true,
+      'height':'244',
+      'async':true,
+      'header':'show'};
+      s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+      s.onload = s.onreadystatechange = function() {
+        var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+        try { z7x3p9 = new WufooForm();z7x3p9.initialize(options);z7x3p9.display(); } catch (e) {}};
+        var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+      })(document, 'script');
+
+      $(".navbar").hide();
+
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+    </script>
+
+</div>

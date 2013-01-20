@@ -1,0 +1,22 @@
+
+<div class="pagination-centered">
+	<h3><%= @event.name %>'s Saved Items</h3>
+
+	<% @event.recipient.scans.limit(8).each do |scan| %>
+	<% @scan = scan %>
+	<%= render 'layouts/scan-list' %>
+	<%end%>
+</div>
+
+<%= link_to "Purchase Items", @event.recipient.checkout_url, :method => "get", "data-role" => "button" %>
+
+<%= render 'layouts/scan-links' %>
+
+<%= link_to "Delete this event's wishlist",@event, 
+:confirm => "Are you sure you wish to delete this person's gift list?",
+:method => :delete, 
+"data-ajax" => "false",
+:rel => "external",
+"data-role" => "button"
+%>
+
